@@ -1,3 +1,4 @@
 # KALKULATOR-SEDERHANA
-![image](https://github.com/user-attachments/assets/23f00384-b45f-454d-810a-842d196492c8)
+![image](https://github.com/user-attachments/assets/85e27450-2ebf-44d8-9133-8cf18def707d)
+
 https://muhammadalvigi.github.io/KALKULATOR-SEDERHANA/
