@@ -2,6 +2,7 @@
 <html lang="id">
 <head>
     <title>Kalkulator Sederhana</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <style>
         body {
             display: flex;
@@ -9,13 +10,11 @@
             align-items: center;
             height: 100vh;
             background-color: pink;
-            
         }
         .calculator {
             background-color: #fff;
             padding: 25px;
             border-radius: 50px;
-            
         }
         #input {
             width: 100%;
@@ -25,9 +24,9 @@
             margin-bottom: 10px;
             border-radius: 50px;
             box-sizing: border-box;
-
         }
         .button {
+            grid-template-columns: repeat(4, 1fr);
             display: grid;
             gap: 10px;
         }
@@ -46,7 +45,8 @@
             color: pink;
         }
         .hasil{
-            grid-column: span 4;
+            grid-column: span 3;
+
         }
         .hapus{
             background-color: black;
@@ -63,41 +63,45 @@
         <input
         placeholder="alvi" type="text" id="input" disabled>
         <div class="button">
-            <button class="hapus" onclick="clearResult()">C</button>
-            <button onclick="appendToResult('7')">7</button>
-            <button onclick="appendToResult('8')">8</button>
-            <button onclick="appendToResult('9')">9</button>
+            <button class="hapus" onclick="hapus()">C</button>
+            <button onclick="angka('7')">7</button>
+            <button onclick="angka('8')">8</button>
+            <button onclick="angka('9')">9</button>
 
-            <button onclick="appendToResult('/')">:</button>
-            <button onclick="appendToResult('4')">4</button>
-            <button onclick="appendToResult('5')">5</button>
-            <button onclick="appendToResult('6')">6</button>
+            <button onclick="angka('/')">:</button>
+            <button onclick="angka('4')">4</button>
+            <button onclick="angka('5')">5</button>
+            <button onclick="angka('6')">6</button>
 
-            <button onclick="appendToResult('*')">x</button>
-            <button onclick="appendToResult('1')">1</button>
-            <button onclick="appendToResult('2')">2</button>
-            <button onclick="appendToResult('3')">3</button>
+            <button onclick="angka('*')">x</button>
+            <button onclick="angka('1')">1</button>
+            <button onclick="angka('2')">2</button>
+            <button onclick="angka('3')">3</button>
 
-            <button onclick="appendToResult('-')">-</button>
-            <button onclick="appendToResult('.')">.</button>
-            <button onclick="appendToResult('0')">0</button>
-            <button onclick="appendToResult('+')">+</button>
+            <button onclick="angka('-')">-</button>
+            <button onclick="angka('+')">+</button>
+            <button onclick="angka('0')">0</button>
+            <button onclick="angka('.')">.</button>
 
-            <button class="hasil" onclick="calculateResult()">=</button>
+            <button onclick="hapus1('')">
+                <i class='bx bxs-exit'></i></button>
+            <button class="hasil" onclick="hasil()">=</button>
         </div>
     </div>
     <script>
         const input = document.getElementById("input");
-        function appendToResult(value) {
+        function angka(value) {
            input.value += value;
         }
 
-        function clearResult() {
+        function hapus() {
             input.value = '';
         }
-
-        function calculateResult() {
-           input.value= eval(input.value);;
+        function hapus1(){
+            input.value=input.value.slice(0, -1);
+        }
+        function hasil() {
+           input.value= eval(input.value);
             } 
     </script>
 </body>
